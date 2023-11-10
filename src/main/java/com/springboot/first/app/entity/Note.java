@@ -7,12 +7,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Entity
+@Entity //This class can be mapped to a database table
 @Table(name="tbl_notes")
 @Data
 public class Note {
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Id //Primary key of the current entity
+	@GeneratedValue(strategy=GenerationType.IDENTITY) //To configure the way of increment the specified column
 	private Long id;
 	private String title;
 	private String body;
