@@ -1,5 +1,11 @@
 package com.springboot.first.app.entity;
 
+import java.util.Date;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,4 +23,10 @@ public class Note {
 	private String title;
 	private String body;
 	private String category;
+	@Column(name="created_date", nullable=false, updatable=false)
+	@CreationTimestamp
+	private Date createdAt;
+	@Column(name="updated_date")
+	@UpdateTimestamp
+	private Date updatedAt; 
 }
